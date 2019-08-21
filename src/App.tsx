@@ -1,24 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import TextBox from './components/formElements/textField/Input';
 const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <TextBox labelName="First Name" type="text"  placeHolder="Enter name"  />
+     <TextBox labelName="First Name" type="text"  placeHolder="Enter name"  style="Active"/>
+     <TextBox labelName="First Name" type="text"   style="Disabled" />
+     <TextBox labelName="First Name" type="text"   style="Error"  errorMessage ="Please enter your first name"/>
     </div>
   );
 }
