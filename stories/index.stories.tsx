@@ -1,7 +1,9 @@
 import { boolean, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import TextBox from '../src/components/formElements/textField/Input';
+import TextBox from '../src/components/formElements/textField';
+
+
 
 const stories = storiesOf('Forms Elements/Text Field', module);
 stories.addDecorator(withKnobs);
@@ -32,7 +34,7 @@ stories.add(
         labelName={`${labelName}`}
         type="text"
         placeHolder="Enter name"
-        style="Active"
+        status="Active"
       />
     );
   }
@@ -48,7 +50,7 @@ stories.add(
         disabled={boolean('Disabled', true)}
         labelName={`${labelName}`}
         type="text"
-        style="Disabled"
+        status="Disabled"
       />
     );
   }
@@ -69,7 +71,7 @@ stories.add(
         labelName={`${labelName}`}
         type="text"
         disabled={boolean('Disabled', true)}
-        style="Error"
+        status="Error"
         errorMessage={`${errorMessage}`}
       />
     );
@@ -87,10 +89,9 @@ stories.add(
       <TextBox
         labelName={`${labelName}`}
         type="text"
-        style="Filled"
+        status="Filled"
         value={`${value}`}
       />
     );
   }
 );
-

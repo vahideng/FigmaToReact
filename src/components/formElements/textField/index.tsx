@@ -6,7 +6,7 @@ interface IProps {
   placeHolder?: string;
   type: string;
   value?: string | number;
-  style?: string;
+  status?: string;
   errorMessage?: string;
   disabled?: boolean;
 }
@@ -18,7 +18,7 @@ const Input: React.FC<IProps> = props => {
         <p
           data-test="labelInput"
           className={
-            props.style === 'Error'
+            props.status === 'Error'
               ? [classes.Label, classes.LabelError].join(' ')
               : classes.Label
           }
@@ -30,15 +30,15 @@ const Input: React.FC<IProps> = props => {
       <input
         disabled={props.disabled}
         className={
-          props.style
-            ? [classes.InputWrapper, classes[props.style]].join(' ')
+          props.status
+            ? [classes.InputWrapper, classes[props.status]].join(' ')
             : classes.InputWrapper
         }
         placeholder={props.placeHolder}
         type={props.type}
         value={props.value}
       />
-      {props.style === 'Error' ? (
+      {props.status === 'Error' ? (
         <p
           data-test="errorMessage"
           className={[

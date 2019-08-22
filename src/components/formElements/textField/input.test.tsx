@@ -10,7 +10,7 @@ interface IProps {
   placeHolder?: string;
   type: string;
   value?: string | number;
-  style?: string;
+  status?: string;
   errorMessage?: string;
   disabled?: boolean;
 }
@@ -30,7 +30,7 @@ const setup = (props: IProps) => {
     <Input
       labelName={props.labelName}
       type={props.type}
-      style={props.style}
+      status={props.status}
       errorMessage={props.errorMessage}
     />
   );
@@ -47,14 +47,14 @@ test('render withot carashing', () => {
   expect(inputComponents.length).toBe(1);
 });
 
-test('render error message if props.style is equal to Error ', () => {
-  const wrapper = setup({ ...props, style: 'Error' });
+test('render error message if props.status is equal to Error ', () => {
+  const wrapper = setup({ ...props, status: 'Error' });
   const video = findByTestAtribute(wrapper, 'errorMessage');
   expect(video.length).toBe(1);
 });
 
-test('Do not render error message if props.style is  not equal to Error ', () => {
-  const wrapper = setup({ ...props, style: 'Active' });
+test('Do not render error message if props.status is  not equal to Error ', () => {
+  const wrapper = setup({ ...props, status: 'Active' });
   const video = findByTestAtribute(wrapper, 'errorMessage');
   expect(video.length).toBe(0);
 });
