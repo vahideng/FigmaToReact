@@ -4,9 +4,16 @@ import React from 'react';
 import { WithFigma } from 'storybook-addon-figma';
 import { addReadme } from 'storybook-readme';
 import AlephButton from '../src/components/Cats/Button/Button';
+import Checkbox from '../src/components/Cats/checkbox/checkbox';
+import AutoComplete from '../src/components/formElements/autoComplete/autoComplete';
 import TextBox from '../src/components/formElements/textField';
+import Navbar from '../src/components/navBar/navbar';
 import ButtonRedme from './alephButtonRedme.md';
+import autoCompleteRedme from './autoCompleteRedme.md';
 import readme from './bbredme.md';
+import checkboxRedme from './checkboxRedme.md';
+import NAVBARRedme from './autoCompleteRedme.md'
+
 
 const storiesOfTextFields = storiesOf('Forms Elements/Text Field', module);
 storiesOfTextFields.addDecorator(withKnobs);
@@ -86,7 +93,7 @@ storiesOfTextFields.add('Text Field', () => {
 
 
 
-const storiesOfButton = storiesOf('Forms Elements/Text Field', module);
+const storiesOfButton = storiesOf('CATs', module);
 storiesOfButton.addDecorator(withKnobs);
 storiesOfButton.addDecorator(addReadme);
 
@@ -128,6 +135,120 @@ storiesOfButton.add(
         <br />
       </>
         </WithFigma>
+    );
+  }
+);
+
+
+
+//////////////
+
+
+const storiesOfAutoComplete = storiesOf('Forms Elements/AutoComplete', module);
+
+storiesOfAutoComplete.addDecorator(addReadme);
+
+storiesOfAutoComplete.addParameters({
+  readme: {
+    // Show readme before story
+    content: autoCompleteRedme,
+    fontBase: '"Roboto", sans-serif',
+    fontCode: 'monospace'
+
+    // Show readme at the addons panel
+  }
+});
+storiesOfAutoComplete.add(
+  ' Auto Complete Text Field',
+
+  () => {
+  
+    return (
+     
+      <>
+        <br />
+        <p style={{ paddingLeft: '10px' }}>Auto Complete Text Field</p>
+        <AutoComplete />
+
+        
+      </>
+     
+    );
+  }
+);
+
+
+
+
+///////////
+
+
+
+
+const storiesOfCheckbox = storiesOf('CATs/Checkbox', module);
+
+storiesOfCheckbox.addDecorator(addReadme);
+
+storiesOfCheckbox.addParameters({
+  readme: {
+    // Show readme before story
+    content: checkboxRedme,
+    fontBase: '"Roboto", sans-serif',
+    fontCode: 'monospace'
+
+    // Show readme at the addons panel
+  }
+});
+storiesOfCheckbox.add(
+  ' Auto Complete Text Field',
+
+  () => {
+  
+    return (
+     
+      <>
+        <br />
+        <p style={{ paddingLeft: '10px' }}>If you have multiple options appearing in a list, you can preserve space by using checkboxes instead of on/off switches. If you have a single option, avoid using a checkbox and use an on/off switch instead.</p>
+        <Checkbox />
+
+        
+      </>
+     
+    );
+  }
+);
+
+
+////////
+const storiesOfNavbar = storiesOf('navbar', module);
+
+storiesOfNavbar.addDecorator(addReadme);
+
+storiesOfNavbar.addParameters({
+  readme: {
+    // Show readme before story
+    content: NAVBARRedme,
+    fontBase: '"Roboto", sans-serif',
+    fontCode: 'monospace'
+
+    // Show readme at the addons panel
+  }
+});
+storiesOfNavbar.add(
+  ' Auto Complete Text Field',
+
+  () => {
+  
+    return (
+     
+      <>
+        <br />
+        <p style={{ paddingLeft: '10px' }}>If you have multiple options appearing in a list, you can preserve space by using checkboxes instead of on/off switches. If you have a single option, avoid using a checkbox and use an on/off switch instead.</p>
+        <Navbar />
+
+        
+      </>
+     
     );
   }
 );

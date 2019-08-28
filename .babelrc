@@ -1,4 +1,11 @@
-{"presets": [
-    ["react-app", { "absoluteRuntime": false }],
-  ]
-}
+// {
+//   "presets": [[
+//       "@babel/env",
+//       {"modules": false}
+//   ]],
+//   "plugins": [
+//     "syntax-dynamic-import",
+//     "transform-runtime",
+//     "transform-async-to-generator"
+//   ]
+// }
